@@ -1,0 +1,13 @@
+// http://css-tricks.com/centering-in-the-unknown/
+// Vertical Align
+// $height : hieght of the div to be vertical centered
+@mixin vertical-center($height) {
+  position: absolute;
+  top: 50%;
+  margin-top: - ($height / 2);
+}
+@mixin horizontal-center($width) {
+  position: absolute;
+  left: 50%;
+  margin-top: - ($height / 2);
+}

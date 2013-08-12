@@ -1,0 +1,22 @@
+// To be applied on a #colorbox element
+// http://www.jacklmoore.com/colorbox
+@mixin colorbox(
+  $background : white,  // Background color
+  $padding: 20px, // Inside padding
+  $z-index: 100 // z-index to be above all element
+) {
+  background: $background;
+  padding: $padding;
+  // Need compass box-shadow
+  // http://css3gen.com/box-shadow/
+  @include single-box-shadow(rgba(8, 0, 0, 0.5), 5, 5, 20);
+  z-index: $z-index;
+  
+  
+  // Default buttons reset
+   // these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles
+    #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+    
+    // avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating)
+    #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}   
+}

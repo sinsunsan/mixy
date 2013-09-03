@@ -1,0 +1,62 @@
+/*
+  Require sass 3.2 version the latest to do this
+  http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+  Common breakpoints 
+  1280
+  1024
+  710
+  480
+  
+  $xl = 1280px;
+  $l = 1024px;
+  $m = 710px;
+  $m = 480px;
+  
+  @todo replace fixed units by variable that are setable on a project by project basis
+*/
+@mixin break($point) {
+  
+  @if $point == xl {
+    @media (min-width: $xl) { @content; }
+  }
+  @if $point == l {
+    @media (min-width: $l) and (max-width: $xl - 1px) { @content; }
+  }
+  @if $point == m {
+    @media (min-width: $m) and (max-width: $l - 1px) { @content; }
+  }
+  // As we have a mobile first approach. 
+  // This break point should normally not be used. 
+  // As it's the default
+  @if $point == s {
+    @media (min-width: $s) and (max-width: $s -1px) { @content; }
+  }
+  
+  // Smaller than
+  @if $point == xlmax {
+    @media (max-width: $xl) { @content; }
+  }
+  @if $point == lmax {
+    @media (max-width: $l) { @content; }
+  }
+  @if $point == mmax {
+    @media (max-width: $m) { @content; }    
+  }
+  @if $point == smax {
+    @media (max-width: $s) { @content; }    
+  }
+  
+  // Greater than
+  @if $point == xlmin {
+    @media (min-width: $xl) { @content; }
+  }
+  @if $point == lmin {
+    @media (min-width: $l) { @content; }
+  }
+  @if $point == mmin {
+    @media (min-width: $m) { @content; }
+  }
+  @if $point == smin {
+    @media (min-width: $s) { @content; }    
+  }
+}

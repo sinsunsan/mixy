@@ -1,8 +1,12 @@
 // General mixins that comes from https://github.com/sinsunsan/mixy
+
+@import "vars";
+
 @import "gen";
 
 @import "colorbox";
 @import "center";
+@import "responsive";
 
 // Mixins from other libraries
 @import "ext";

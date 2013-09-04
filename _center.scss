@@ -2,13 +2,16 @@
 // Vertical Align
 // $height : hieght of the div to be vertical centered
 @mixin vertical-center($height) {
+  height: $height;
   position: absolute;
   top: 50%;
   margin-top: - ($height / 2);
 }
+
 @mixin horizontal-center($width) {
   position: absolute;
   left: 50%;
-  margin-top: - ($height / 2);
+  margin-left: - ($width / 2);
+  width: $width;
 }
 

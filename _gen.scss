@@ -4,3 +4,22 @@
   bottom: $bottom;
   left: $left;
 }
+// Per aps in compass directly to see
+// https://github.com/tinganho/compass-placeholder/blob/master/stylesheets/_compass-placeholder.scss
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

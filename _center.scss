@@ -23,4 +23,33 @@
     position: absolute;
   }
 }
+// Ghost element technics
+// http://codepen.io/chriscoyier/pen/gsodI
+// To be applied to the container
+// The element to be centered need to have the vertical-center class
+@mixin centered() {
+  & {
+    text-align:center;
+  }
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .centered {
+    vertical-align: middle;
+    @include inline-block;
+  }
+}
 
+// Size the height of a div 
+// relative to a width in %
+// Technics in http://stackoverflow.com/questions/10062811/height-div-based-on-percentage-based-width
+@mixin ratio($width, $height2width:1) {
+    width: $width;
+    padding: ($height2width * ($width/2));
+    position: relative;
+    // http://compass-style.org/examples/compass/css3/box_sizing/
+    @include box-sizing(border-box);
+}

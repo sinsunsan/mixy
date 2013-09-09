@@ -1,3 +1,13 @@
 .center {
   text-align: center;
 }
+
+// Force container to be of the floated elements dimensions
+@mixin float-wrap {
+  overflow: auto;
+}
+// Allow a dummy image to size its container
+img.dummy-sizer {
+  position: absolute;
+  z-index: -10;
+}

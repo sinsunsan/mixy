@@ -1,11 +1,24 @@
-.center {
-  text-align: center;
+// Full background stamp
+// To be applied to the wrapper div around the div icon
+// div.wrapper Wrapper
+//  div.wrapper-background Colored background
+//    .centered Fontface Icon
+//  img Background images
+
+@mixin full-stamp($background: blue, $color: white) {
+  position: relative;
+  .wrapper-background {
+    background: $background;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    @include centered;
+    .centered {
+      color: $color;
+    }
+  }
 }
 
-// Force container to be of the floated elements dimensions
-@mixin float-wrap {
-  overflow: visible;
-}
 // Allow a dummy image to size its container
 img.dummy-sizer {
   position: absolute;

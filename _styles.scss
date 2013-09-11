@@ -1,4 +1,5 @@
-// Full background stamp
+// Full background stamp with a fontface logo in the middle
+//
 // To be applied to the wrapper div around the div icon
 // div.wrapper Wrapper
 //  div.wrapper-background Colored background
@@ -17,6 +18,22 @@
       color: $color;
     }
   }
+}
+
+// To be applied to the wrapper div around the div icon
+
+// div.wrapper Wrapper
+//  div.wrapper-background Colored background
+//    .centered Fontface Icon
+//  img Background images
+@mixin middle-stamp($background: 'none', $color: 'black', $padding: 2em) {
+  
+  @include full-stamp($background: 'none', $color: $color); // Wrapper background need to have centered class
+  .centered {
+    background: $background;
+    padding: $padding;
+  }
+ 
 }
 
 // Allow a dummy image to size its container

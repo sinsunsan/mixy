@@ -11,3 +11,32 @@ img.dummy-sizer {
   position: absolute;
   z-index: -10;
 }
+
+// To be applied to the container of the post element 
+// The post element has the class .post
+// http://css-tricks.com/how-nth-child-works/
+// $col number of column
+// @todo be generalized for any number of column 
+// IE don't suppor it from IE8 and below use jquery with a class to complete this rule
+@mixin clear-right-margin($col) {
+  @if ($col == 2) {
+    & .post:nth-child(even) {
+     margin-right: 0;
+    }
+  }
+  @else if ($col == 3) {
+    & .post:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+  @else if ($col == 4) {
+    & .post:nth-child(4n+4) {
+      margin-right: 0;
+    }
+  }
+  @else if ($col == 4) {
+    & .post:nth-child(5n+5) {
+      margin-right: 0;
+    }
+  } 
+}

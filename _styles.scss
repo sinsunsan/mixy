@@ -4,7 +4,7 @@
 
 // Force container to be of the floated elements dimensions
 @mixin float-wrap {
-  overflow: auto;
+  overflow: visible;
 }
 // Allow a dummy image to size its container
 img.dummy-sizer {

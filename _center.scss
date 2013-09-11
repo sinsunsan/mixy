@@ -3,7 +3,7 @@
 // $height : hieght of the div to be vertical centered
 @mixin vertical-center($height, $op: 'absolute') {
   height: $height;
-  position: absolute;
+  position: $op;
   top: 50%;
   margin-top: - ($height / 2);
   @include set-position($op);
@@ -11,10 +11,18 @@
 
 @mixin horizontal-center($width, $op: 'absolute') {
   left: 50%;
+  position: $op;
+  
   margin-left: - ($width / 2);
   width: $width;
   @include set-position($op);
 }
+
+@mixin absolute-center($width, $height) {
+  @include horizontal-center($width);
+  @include vertical-center($height);
+}
+
 @mixin set-position($op) {
   @if $op == 'relative' {
     position: relative;

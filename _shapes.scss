@@ -1,0 +1,61 @@
+//http://css-tricks.com/examples/ShapesOfCSS/
+// Need a wrapper 
+@mixin triangle($type, $size:100px, $color: gray) {
+  width: 0;
+	height: 0;
+  @if ($type == 'top-left') {
+    border-top: $size solid $color;
+  	border-right: $size solid transparent;
+  }
+  @else if ($type == 'top-right') {
+    border-top: $size solid $color;
+  	border-left: $size solid transparent;
+  }
+  @else if ($type == 'bottom-left') {
+    border-bottom: $size solid $color;
+    border-right: $size solid transparent;
+  }
+  @else if ($type == 'bottom-right') {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+// Need a wrapper 
+// div.button
+// div.inner
+// button { @include button-chamfered();}
+@mixin button-chamfered(
+  $chamfer-size: 20px,
+  $background: gray
+) {
+  background: $background;
+  position: relative;
+  
+  .top-right, .top-left, .bottom-right, .bottom-left {
+    background: $background;
+    content: '';
+    position: absolute;
+   
+  }
+  // The wrapper
+  .top-right {
+    @include triangle('top-right', $chamfer-size, white);
+    top: 0;
+    right: 0;
+  }
+  .top-left {
+    @include triangle('top-left', $chamfer-size, white);
+    top: 0;
+    left: 0;
+  }
+  .bottom-left {
+    @include triangle('bottom-left', $chamfer-size, white);
+    bottom: 0;
+    left: 0;
+  }
+  .bottom-right {
+    @include triangle('bottom-right', $chamfer-size, white);
+    bottom: 0;
+    right: 0;
+  }
+}

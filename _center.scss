@@ -1,4 +1,6 @@
 // http://css-tricks.com/centering-in-the-unknown/
+//http://blog.themeforest.net/tutorials/vertical-centering-with-css/
+
 // Vertical Align
 // $height : hieght of the div to be vertical centered
 @mixin vertical-center($height, $op: 'absolute') {
@@ -45,9 +47,32 @@
     height: 100%;
     vertical-align: middle;
   }
+  .centered-content, 
   .centered {
     vertical-align: middle;
     @include inline-block;
+  }
+}
+
+// http://cdpn.io/BDkdJ
+// To be applied to centering container 
+// need to have a .centered div inside
+// IE8 + compatible
+@mixin centered-table {
+  display:table;
+  .centered {
+    display:table-cell; 
+    vertical-align:middle;
+    text-align: center;
+  }
+}
+
+@mixin centering($method) {
+  @if ($method == 'table') {
+    @include centered-table;
+  }
+  @else if ($method == 'ghost') {
+    @include centered;
   }
 }
 

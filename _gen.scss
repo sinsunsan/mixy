@@ -5,21 +5,39 @@
   left: $left;
 }
 // Per aps in compass directly to see
-// https://github.com/tinganho/compass-placeholder/blob/master/stylesheets/_compass-placeholder.scss
-@mixin placeholder {
-  &::-webkit-input-placeholder {
-    @content;
-  }
+// https://github.com/michaelsacca/Compass-Placeholder-Text-Mixin/blob/master/_placeholderText.scss
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}
 
-  &:-moz-placeholder { /* Firefox 18- */
-    @content;
-  }
+// When a style is defined to a div, and a sub div is also targeted 
+// We need to stop em 
+/* 
+div.small-text 
+  p
+  
+.small-text {
+  font-size: 0.7em;
+}
+p {
+  font-size: 0.5em;
+}
+If we do nothing, p inside small text will be very small
+So we make 
+.small-text {
+  @inlude stop-em;
+}
+To stop the heritage to common text block 
+@todo complete with otehr cases
 
-  &::-moz-placeholder {  /* Firefox 19+ */
-    @content;
-  }
-
-  &:-ms-input-placeholder {
-    @content;
+*/
+@mixin stop-em {
+  // Sub element don't get reduced 
+  li, a, p {
+    font-size: 1em;
   }
 }

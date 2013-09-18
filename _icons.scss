@@ -1,0 +1,33 @@
+@mixin icon-margin($align:'left') {
+  @if ($align == 'right') {
+    margin-left: $icon-margin;
+    margin-right: 0;
+  }
+  @if ($align == 'left') {
+    margin-right: $icon-margin;
+    margin-left: 0;
+  }
+  
+}
+
+@mixin icon-margin-list {
+
+  .icon.first {
+    margin-left: 0;
+  }
+  .icon.last {
+    margin-right: 0;
+  }
+}
+
+// The main mixins to be inserted
+// Don't insert it inside .icon
+@mixin icon-align {
+  .icon.right {
+    @include icon-margin('right');
+  }
+  .icon.left {
+    @include icon-margin('left');
+  }
+  @include icon-margin-list;
+}

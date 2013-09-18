@@ -1,6 +1,7 @@
 //http://css-tricks.com/examples/ShapesOfCSS/
-// Need a wrapper 
-@mixin triangle($type, $size:100px, $color: gray) {
+// Need a wrapper
+// $ratio height / width factor
+@mixin triangle($type, $size: 100px, $color: gray, $ratio: 1) {
   width: 0;
 	height: 0;
   @if ($type == 'top-left') {
@@ -19,7 +20,26 @@
     border-bottom: $size solid $color;
     border-left: $size solid transparent;
   }
+  @else if ($type == 'up') {
+    border-left: ($size / 2) solid transparent;
+  	border-right: ($size / 2) solid transparent;
+  	border-bottom: ($size * $ratio) solid $color;
+  }
+  @else if ($type == 'down') {
+    border-left: ($size / 2) solid transparent;
+  	border-right: ($size / 2) solid transparent;
+  	border-top: ($size * $ratio) solid $color;
+  }
 }
+
+@mixin triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid red;
+}
+
 // Need a wrapper 
 // div.button
 // div.inner

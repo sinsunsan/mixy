@@ -69,6 +69,7 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == xlmin {
     @media (min-width: $xl) { @content; }
   }
+  // At least 1024
   @if $point == lmin {
     @media (min-width: $l) { @content; }
   }

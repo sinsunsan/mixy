@@ -17,13 +17,13 @@
 @mixin break($point) {
   
   @if $point == xl {
-    @media (min-width: $xl) { @content; }
-  }
-  @if $point == l {
     @media (min-width: $l) and (max-width: $xl - 1px) { @content; }
   }
-  @if $point == m {
+  @if $point == l {
     @media (min-width: $m) and (max-width: $l - 1px) { @content; }
+  }
+  @if $point == m {
+    @media (min-width: $s) and (max-width: $m - 1px) { @content; }
   }
   // As we have a mobile first approach. 
   // This break point should normally not be used. 

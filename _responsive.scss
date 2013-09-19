@@ -6,11 +6,11 @@
   1024
   710
   480
-  
-  $xl = 1280px;
-  $l = 1024px;
-  $m = 710px;
-  $m = 480px;
+
+  $xl: 1200px;
+  $l: 1024px;   
+  $m: 768px;
+  $s: 480px;
   
   @todo replace fixed units by variable that are setable on a project by project basis
 */
@@ -48,7 +48,7 @@
   }
   
   @if $point == underIpad {
-    @media (max-width: 767) { @content; }    
+    @media (max-width: 767px) { @content; }    
   }
   
   // Greater than

@@ -28,8 +28,9 @@
   // As we have a mobile first approach. 
   // This break point should normally not be used. 
   // As it's the default
+  // It's a special breakpoints as it is the first, so it's similar to smax
   @if $point == s {
-    @media (min-width: $s) and (max-width: $s -1px) { @content; }
+    @media (max-width: $s) { @content; }
   }
   
   // Smaller than

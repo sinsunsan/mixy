@@ -14,21 +14,39 @@
   
   @todo replace fixed units by variable that are setable on a project by project basis
 */
+$xl: 1200px;
+$l: 1024px;   
+$m: 768px;
+$s: 480px;
+$xs: 320px;
+
+$mob: 'mmax';
+$iphone: 's'; // 320 portait 480 landscape 
+$iphoneL: 'xs'; // Iphone portrait 320
+$ipadP: 'm'; // 768 ipad portrait 
+// exactly 768 could be adresses with min-width: 768 max-width: 1023
+$ipadL: 'l'; //1024 ipad landscape
+
 @mixin break($point) {
   
   @if $point == xl {
-    @media (min-width: $l) and (max-width: $xl - 1px) { @content; }
+    // 1025 to 1200
+    @media (min-width: $l + 1px) and (max-width: $xl) { @content; }
   }
   @if $point == l {
-    @media (min-width: $m) and (max-width: $l - 1px) { @content; }
+    // 769 to 1024
+    @media (min-width: $m + 1px) and (max-width: $l) { @content; }
   }
+   // 481 to 768
   @if $point == m {
-    @media (min-width: $s) and (max-width: $m - 1px) { @content; }
+    @media (min-width: $s + 1px) and (max-width: $m) { @content; }
   }
   // As we have a mobile first approach. 
   // This break point should normally not be used. 
   // As it's the default
   // It's a special breakpoints as it is the first, so it's similar to smax
+  // @todo make the iphone portait xs
+  // 480 and below
   @if $point == s {
     @media (max-width: $s) { @content; }
   }

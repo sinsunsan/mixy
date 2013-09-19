@@ -47,6 +47,10 @@
     @media (max-width: $s) { @content; }    
   }
   
+  @if $point == underIpad {
+    @media (max-width: 767) { @content; }    
+  }
+  
   // Greater than
   @if $point == xlmin {
     @media (min-width: $xl) { @content; }

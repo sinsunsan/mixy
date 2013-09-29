@@ -1,19 +1,6 @@
-/*
-  Require sass 3.2 version the latest to do this
-  http://css-tricks.com/media-queries-sass-3-2-and-codekit/
-  Common breakpoints 
-  1280
-  1024
-  710
-  480
-  
-  $xl = 1280px;
-  $l = 1024px;
-  $m = 710px;
-  $m = 480px;
-  
-  @todo replace fixed units by variable that are setable on a project by project basis
-*/
+//  Require sass 3.2 version the latest to do this
+// http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+
 $xl: 1200px;
 $l: 1024px;   
 $m: 768px;

@@ -14,6 +14,12 @@ $ipadP: 'm'; // 768 ipad portrait
 // exactly 768 could be adresses with min-width: 768 max-width: 1023
 $ipadL: 'l'; //1024 ipad landscape
 
+// To be applied to img (twitter bootstrap)
+@mixin responsive-image {
+  height: auto;
+  width: 100%;
+}
+
 @mixin break($point) {
   
   @if $point == xl {

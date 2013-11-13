@@ -26,8 +26,14 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == sm {
     @media (min-width: 768px) { @content; }
   }
+  @if $point == smo {
+    @media (min-width: 768px) and (max-width: 991px){ @content; }
+  }
   @if $point == md {
     @media (min-width: 992px) { @content; }
+  }
+  @if $point == mdo {
+    @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
   @if $point == ld {
     @media (min-width: 1200px) { @content; }

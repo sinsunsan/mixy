@@ -15,10 +15,30 @@ $ipadP: 'm'; // 768 ipad portrait
 // exactly 768 could be adresses with min-width: 768 max-width: 1023
 $ipadL: 'l'; //1024 ipad landscape
 
-// To be applied to img (twitter bootstrap)
-@mixin responsive-image {
-  height: auto;
-  width: 100%;
+@mixin bs-query($point) {
+  // Twitter bootstrap 
+  // xs / Extra small devices / Phones < 768px
+  // sm / Small devices / Tablets >= 768px
+  // md / Medium devices / Desktops >= 992px
+  // ld / Large devices / Desktops >= 1200px
+  @if $point == xs {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $point == sm {
+    @media (min-width: 768px) { @content; }
+  }
+  @if $point == smo {
+    @media (min-width: 768px) and (max-width: 991px){ @content; }
+  }
+  @if $point == md {
+    @media (min-width: 992px) { @content; }
+  }
+  @if $point == mdo {
+    @media (min-width: 992px) and (max-width: 1199px){ @content; }
+  }
+  @if $point == ld {
+    @media (min-width: 1200px) { @content; }
+  }
 }
 
 @mixin break($point) {
@@ -73,4 +93,12 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == smin {
     @media (min-width: $s) { @content; }    
   }
+}
+
+// Twitter bootstrap has the class img-responsive 
+// that give a max-width: 100% 
+// But this don't allow lower res images to be scaled up 
+// Even if their resolution is lower
+.img-scale-width {
+  width: 100%;
 }

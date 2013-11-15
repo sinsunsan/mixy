@@ -41,6 +41,19 @@ $ipadL: 'l'; //1024 ipad landscape
   }
 }
 
+// Mixin with custom value  
+@mixin bp-min($value) {
+   @media (min-width: $value) { @content; }
+}
+// Mixin with custom value  
+@mixin bp-max($value) {
+   @media (max-width: $value) { @content; }
+}
+// Mixi
+@mixin bp-range($min, $max) {
+  @media (min-width: $min + 1px) and (max-width: $max) { @content; }
+}
+
 @mixin break($point) {
   
   @if $point == xl {

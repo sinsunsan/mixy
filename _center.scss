@@ -36,7 +36,7 @@
 // Ghost element technics
 // http://codepen.io/chriscoyier/pen/gsodI
 // To be applied to the container
-// The element to be centered need to have the vertical-center class
+// The element to be centered need to have the centered-content class
 @mixin centered() {
   & {
     text-align:center;

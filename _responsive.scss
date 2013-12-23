@@ -115,3 +115,6 @@ $ipadL: 'l'; //1024 ipad landscape
 .img-scale-width {
   width: 100%;
 }
+@mixin responsive-image {
+  width: 100%;
+}

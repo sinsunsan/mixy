@@ -1,9 +1,8 @@
 {
-  "name": "mixy sass",
+  "name": "mixy",
   "version": "1.0.0",
-  "main": "",
+  "main": "./_all.scss",
   "ignore": [
-    ".jshintrc"
   ],
   "dependencies": {
   },

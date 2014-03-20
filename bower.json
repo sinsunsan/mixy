@@ -1,0 +1,12 @@
+{
+  "name": "mixy sass",
+  "version": "1.0.0",
+  "main": "",
+  "ignore": [
+    ".jshintrc"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

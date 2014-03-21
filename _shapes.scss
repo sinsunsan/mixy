@@ -43,7 +43,7 @@
 // Need a wrapper 
 // div.button
 // div.inner
-// button { @include button-chamfered();}
+// button {@include button-chamfered();}
 @mixin button-chamfered(
   $chamfer-size: 20px,
   $background: gray

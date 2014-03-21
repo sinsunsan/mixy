@@ -18,3 +18,9 @@ $em-base: 16px !default;
 @function strip-units($val) {
   @return ($val / ($val * 0 + 1));
 }
+
+@function rem($pxval) {
+    $em: em($pxval);
+    $em : strip-units($em);
+    @return $em + rem; 
+}

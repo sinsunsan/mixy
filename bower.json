@@ -1,7 +1,17 @@
 {
   "name": "mixy",
   "version": "1.0.4",
+  "homepage": "https://github.com/sinsunsan/mixy",
   "main": "./_all.scss",
+  "authors": [
+    "Sébastien Lucas"
+  ], 
+  "description": "Mixy is a library of sass mixins",
+  "keywords": [
+    "sass",
+    "mixins" 
+  ], 
+  "licence": "MIT",
   "ignore": [
   ],
   "dependencies": {

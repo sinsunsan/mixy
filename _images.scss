@@ -1,0 +1,26 @@
+// Scale a wrapper div with a defined ratio and hide an image that would overflow 
+// The image is place at the top of the wrapper / not centered vertically.
+
+// based on http://wellcaffeinated.net/articles/2012/12/10/very-simple-css-only-proportional-resizing-of-elements/
+// To be applied in the container and have .wrap-image div in it .container { @include wrap-image; }
+
+// Working demo here 
+// http://sassmeister.com/gist/9834560 
+@mixin wrap-image(
+ $horizontal-division,// Number of division of the width of the container
+ $height-ratio: 1 // height / width ratio
+ ) {
+    .wrap-image {
+      background: blue;
+      border: white;
+      height: 0; 
+      float: left;
+      padding-top: percentage((1 / $horizontal-division) * $height-ratio);
+      width: percentage(1/ $horizontal-division);
+      overflow: hidden;
+      img {
+        margin-top: percentage(-(1/ $horizontal-division));
+        width: 100%;
+      }
+    }
+}

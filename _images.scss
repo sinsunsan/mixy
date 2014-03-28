@@ -10,17 +10,15 @@
  $horizontal-division,// Number of division of the width of the container
  $height-ratio: 1 // height / width ratio
  ) {
-    .wrap-image {
-      background: blue;
-      border: white;
-      height: 0; 
-      float: left;
-      padding-top: percentage((1 / $horizontal-division) * $height-ratio);
-      width: percentage(1/ $horizontal-division);
-      overflow: hidden;
-      img {
-        margin-top: percentage(-(1/ $horizontal-division));
-        width: 100%;
-      }
+    $offset: 1 / $horizontal-division;
+
+    height: 0; 
+    float: left;
+    padding-top: percentage($offset * $height-ratio);
+    width: percentage($offset);
+    overflow: hidden;
+    img {
+      margin-top: percentage(-($offset)); //@todo need to be tested more
+      width: 100%;
     }
 }

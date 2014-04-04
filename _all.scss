@@ -23,7 +23,7 @@ $mixy-print-css: true !default;
 @import "ext";
 
 @mixin mixy {
-    @include mixy-checkbox;
+    @include mixy-forms;
 }
     
 .mixy {

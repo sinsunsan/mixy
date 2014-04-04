@@ -1,5 +1,8 @@
 // General mixins that comes from https://github.com/sinsunsan/mixy
 
+$mixy-print-css: true !default;
+
+
 @import "vars";
 
 @import "gen";
@@ -13,6 +16,18 @@
 @import "videos";
 @import "responsive";
 @import "images";
+@import "forms";
+
 
 // Mixins from other libraries
 @import "ext";
+
+@mixin mixy {
+    @include mixy-checkbox;
+}
+    
+.mixy {
+    @if ($mixy-print-css) {
+        @include wecook;
+    }
+}

@@ -4,6 +4,13 @@
   bottom: $bottom;
   left: $left;
 }
+
+// Fix a scroll problem on a scrollable div on mobile
+// http://programming.mvergel.com/2013/09/solved-smooth-div-scrolling-in-ipad.html
+@mixin mobile-scroll-fix() {
+    -webkit-overflow-scrolling: touch;
+}
+
 // Per aps in compass directly to see
 // https://github.com/michaelsacca/Compass-Placeholder-Text-Mixin/blob/master/_placeholderText.scss
 @mixin input-placeholder {

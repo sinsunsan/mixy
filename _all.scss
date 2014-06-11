@@ -1,6 +1,7 @@
 // General mixins that comes from https://github.com/sinsunsan/mixy
 
-$mixy-print-css: true !default;
+//$mixy-print-css: false !default;
+$mixy-print-css: false;
 
 
 @import "vars";
@@ -28,6 +29,7 @@ $mixy-print-css: true !default;
     
 .mixy {
     @if ($mixy-print-css) {
-        @include wecook;
+        // Include the mixins to be prefixed by mixy class
+        //@include ;
     }
 }

@@ -112,8 +112,10 @@ $ipadL: 'l'; //1024 ipad landscape
 // that give a max-width: 100% 
 // But this don't allow lower res images to be scaled up 
 // Even if their resolution is lower
-.img-scale-width {
-  width: 100%;
+@if ($mixy-print-css) {
+  .img-scale-width {
+    width: 100%;
+  }
 }
 @mixin responsive-image {
   width: 100%;

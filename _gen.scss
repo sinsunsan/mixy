@@ -23,25 +23,21 @@
 
 // When a style is defined to a div, and a sub div is also targeted 
 // We need to stop em 
-/* 
-div.small-text 
-  p
   
-.small-text {
-  font-size: 0.7em;
-}
-p {
-  font-size: 0.5em;
-}
-If we do nothing, p inside small text will be very small
-So we make 
-.small-text {
-  @inlude stop-em;
-}
-To stop the heritage to common text block 
-@todo complete with otehr cases
+// .small-text {
+//   font-size: 0.7em;
+// }
+// p {
+//   font-size: 0.5em;
+// }
+// If we do nothing, p inside small text will be very small
+// So we make 
+// .small-text {
+//   @include stop-em;
+// }
+// To stop the heritage to common text block 
+// @todo complete with otehr cases
 
-*/
 @mixin stop-em {
   // Sub element don't get reduced 
   li, a, p {

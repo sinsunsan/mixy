@@ -37,9 +37,11 @@
 }
 
 // Allow a dummy image to size its container
-img.dummy-sizer {
-  position: absolute;
-  z-index: -10;
+@if ($mixy-print-css) {
+  img.dummy-sizer {
+    position: absolute;
+    z-index: -10;
+  }
 }
 
 // To be applied to the container of the post element 

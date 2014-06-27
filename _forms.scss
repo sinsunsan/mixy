@@ -1,36 +1,100 @@
-// Big checkboxes
-// http://www.wecook.fr/planning#/_=_
-
-// It's the rotation of the border of a inside rectangle that produce the display
-// The label is placed on the checkbox 
-// the for attribute trigger the synchronisation of checked status
-// <div class="option checkbox">
-//     <input id="course-type1" type="checkbox" checked="checked">
-//     <label for="course-type1"></label>Entree
-// </div>
-
-@mixin mixy-checkbox(
+@mixin mixy-checkbox-common(
         $display: 'inline-block', // Horizontal or vertical display
+        $hori-div: 1, // Number of horizontal division
         $size: 20px,  // Size
         $checked-color: $greenLight, // Background color when checked 
-        $unchecked-color: $information-color,  // BAckground color when unchecked
-        $tick-color: white  // Tick color
+        $unchecked-color: $information-color,  // Background color when unchecked
+        $tick-color: white,  // Tick color
+        $type: 'checkbox'
     ) {
-    .checkbox {
+
+    $hori-div-ext-margin: 5%; // external margin when we divide
+    $checkbox-right-margin: 5px;
+    
+    // General styling of the container
+    &, &.radio, &.checkbox {    
         @include clearfix();
         position: relative;
-        padding-left: $size + 3px;
-        display: $display;
+        padding: 0;
+        margin-left: 0;
+        width: 100%;
+        .option {
+            // Some reset 
+            //padding: 0;
+        }
+    }
 
-        label{
-            cursor: pointer;
-            position: absolute;
-            width: $size;
-            height: $size;
-            top: 0;
-            background: #CCC;
-            border-radius: ($size / 10);
-            margin-left: - ($size + 3px);
+    // Horizontal or vertical alignement
+    @if ($display == 'inline-block') {
+        & .option {
+            display: inline-block; 
+        }
+    }
+    &.horizontal .option {
+        display:  inline-block;
+    }
+    
+    // Horizontal division
+    @if ($hori-div != 1) {
+        &.horizontal .option {
+            width: (100% - $hori-div-ext-margin) / $hori-div;
+        }
+        @if ($display == 'inline-block') {
+            width: (100% - $hori-div-ext-margin) / $hori-div;
+        }
+    }
+    &.horizontal.div2 .option {
+        width: (100% - $hori-div-ext-margin) / 2;
+    }
+    &.horizontal.div3 .option {
+        width: (100% - $hori-div-ext-margin) / 3;
+    }
+    &.horizontal.div4 .option {
+        width: (100% - $hori-div-ext-margin) / 4;
+    }
+
+    // Real input hiding
+    input[type="radio"] {
+        display: none;
+        &:checked + label {
+            background: $checked-color;
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+        &:checked + label {
+            background: $checked-color;
+            &:after {
+                @include opacity(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    // Square or circle / Default square
+    label {
+        @include border-radius($size /10);
+        @if ($type == "radio") {
+            @include border-radius($size);
+        }
+    }
+    &.radio label {
+        @include border-radius($size);
+    }
+
+    // False styled element
+    label {
+        cursor: pointer;
+        position: absolute;
+        width: $size;
+        height: $size;
+        top: 0;
+        background: #CCC;
+        margin-left: - ($size);
+
+        // Definition of the tick only for checkbox 
+        @if ($type == "checkbox") {
             &:after {
                 @include opacity(0);
                 content: '';
@@ -38,38 +102,77 @@
                 width: $size / 2;
                 height: $size  / 4;
                 background: transparent;
-                top: $size / 4;
+                top: $size / 4 + ($size / 20);
                 left: $size / 4;
                 border: ($size / 10) solid white;
                 border-top: none;
                 border-right: none;
                 @include transform(rotate(-45deg));
             }
-            &:hover::after {
-                @include opacity(0.5);
-            }
         }
+        
+        &:hover::after {
+            @include opacity(0.5);
+        }
+    }
 
-        input[type=checkbox] {
-            display: none;
-            &:checked + label {
-                background: $checked-color;
-                &:after {
-                    @include opacity(1);
-                    opacity: 1;
-                }
-            }
-        }
-        + label, + span.label {
-            vertical-align: top;
-            cursor: pointer;
-            @include user-select(none);
-        }
+    label span.text-label {
+        margin-left: $size + $checkbox-right-margin;
+    }
+
+    + label, + span.label {
+        vertical-align: top;
+        cursor: pointer;
+        @include user-select(none);
     }
 }
 
+@mixin mixy-form-checkbox (
+        $display: 'inline-block', // Horizontal or vertical display, 
+        $hori-div: 3, // Number of horizontal division (works online with inline-block)
+        $size: 20px,  // Size
+        $checked-color: $greenLight, // Background color when checked 
+        $unchecked-color: $information-color,  // Background color when unchecked
+        $tick-color: white  // Tick color
+    ) {
+    @include wecook-checkbox-common(
+        $display : $display,
+        $size : $size,
+        $checked-color : $checked-color,
+        $unchecked-color : $unchecked-color,
+        $tick-color : $tick-color, 
+        $type: 'checkbox'
+    );
+}
 
+@mixin mixy-form-radio (
+        $display: 'inline-block', // Horizontal or vertical display
+        $size: 20px,  // Size
+        $checked-color: $greenLight, // Background color when checked 
+        $unchecked-color: $information-color,  // Background color when unchecked
+        $tick-color: white  // Tick color
+    ) {
+
+    @include wecook-checkbox-common(
+        $display : $display,
+        $size : $size,
+        $checked-color : $checked-color,
+        $unchecked-color : $unchecked-color,
+        $tick-color : $tick-color,
+        $type: 'radio'
+    );
+}
+// Added parameters
+// We can add other classes to wecook-form-radio
+// To configure the display without having to include the mixins from the file
+// which cause some code duplication in the final css
+// 
+//  horizontal | vertical
+// div2 div3 div4 when horizontal the number of division 
+// Type radio | checkbox
 @mixin mixy-forms {
-    @include mixy-checkbox;
-
+    .mixy-form {
+        @include mixy-form-checkbox;
+        @include mixy-form-radio;
+    }
 }

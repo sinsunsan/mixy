@@ -18,9 +18,9 @@ $ipadL: 'l'; //1024 ipad landscape
 @mixin bs-query($point) {
   // Twitter bootstrap 
   // xs / Extra small devices / Phones < 768px
-  // sm / Small devices / Tablets >= 768px
-  // md / Medium devices / Desktops >= 992px
-  // ld / Large devices / Desktops >= 1200px
+  // sm / Small  / Tablets >= 768px
+  // md / Medium  / Desktops >= 992px
+  // lg / Large / Desktops >= 1200px
   @if $point == xs {
     @media (max-width: 767px) { @content; }
   }
@@ -36,8 +36,11 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == mdo {
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
-  @if $point == ld {
+  @if ($point == ld  || $point == lg) { // We keep ld for legacy but the offical twitter boostrap is lg
     @media (min-width: 1200px) { @content; }
+  }
+  @else {
+    @debug "no valid named breakpoint has been found";
   }
 }
 

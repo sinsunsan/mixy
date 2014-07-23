@@ -21,22 +21,28 @@ $ipadL: 'l'; //1024 ipad landscape
   // sm / Small  / Tablets >= 768px
   // md / Medium  / Desktops >= 992px
   // lg / Large / Desktops >= 1200px
-  @if $point == xs {
+  @if ($point == xs) {
     @media (max-width: 767px) { @content; }
   }
-  @if $point == sm {
+  @if ($point == sm) {
     @media (min-width: 768px) { @content; }
   }
-  @if $point == smo {
+  @if ($point == smo) {
     @media (min-width: 768px) and (max-width: 991px){ @content; }
   }
-  @if $point == md {
+  @if ($point == md) {
     @media (min-width: 992px) { @content; }
   }
-  @if $point == mdo {
+  @if ($point == mdo) {
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
-  @if ($point == ld  || $point == lg) { // We keep ld for legacy but the offical twitter boostrap is lg
+  // We keep ld for legacy but the offical twitter boostrap is lg
+  // So the next 2 media queries should be identical 
+  // as SASS @if don't allow multiple test in the condition
+  @if ($point == ld) { 
+    @media (min-width: 1200px) { @content; }
+  }
+  @if ($point == lg) {
     @media (min-width: 1200px) { @content; }
   }
   @else {

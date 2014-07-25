@@ -37,14 +37,10 @@ $ipadL: 'l'; //1024 ipad landscape
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
   // We keep ld for legacy but the offical twitter boostrap is lg
-  // So the next 2 media queries should be identical 
-  // as SASS @if don't allow multiple test in the condition
-  @if ($point == ld) { 
+  @if ($point == ld or $point == lg) { 
     @media (min-width: 1200px) { @content; }
   }
-  @if ($point == lg) {
-    @media (min-width: 1200px) { @content; }
-  }
+
   @else {
     @debug "no valid named breakpoint has been found";
   }

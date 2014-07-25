@@ -166,10 +166,9 @@
 // We can add other classes to wecook-form-radio
 // To configure the display without having to include the mixins from the file
 // which cause some code duplication in the final css
-// 
-//  horizontal | vertical
+// Horizontal or Vertical
 // div2 div3 div4 when horizontal the number of division 
-// Type radio | checkbox
+// Type Radio or Checkbox
 @mixin mixy-forms {
     .mixy-form {
         @include mixy-form-checkbox;

@@ -27,11 +27,19 @@ $ipadL: 'l'; //1024 ipad landscape
   @if ($point == sm) {
     @media (min-width: 768px) { @content; }
   }
+  @if ($point == smm) {
+    @media (max-width: 991px) { @content; }
+  }
+  // Small size max width
   @if ($point == smo) {
     @media (min-width: 768px) and (max-width: 991px){ @content; }
   }
   @if ($point == md) {
     @media (min-width: 992px) { @content; }
+  }
+  // Medium size max width
+  @if ($point == mdm) {
+    @media (max-width: 1199px) { @content; }
   }
   @if ($point == mdo) {
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
@@ -55,6 +63,8 @@ $ipadL: 'l'; //1024 ipad landscape
    @media (max-width: $value) { @content; }
 }
 // Mixi
+// $min minimum range
+// $max maxium range
 @mixin bp-range($min, $max) {
   @media (min-width: $min + 1px) and (max-width: $max) { @content; }
 }

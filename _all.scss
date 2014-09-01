@@ -3,13 +3,9 @@
 //$mixy-print-css: false !default;
 $mixy-print-css: false;
 
-
 @import "vars";
-
 @import "gen";
-
 @import "styles";
-
 @import "colorbox";
 @import "shapes";
 @import "icons";
@@ -18,7 +14,6 @@ $mixy-print-css: false;
 @import "responsive";
 @import "images";
 @import "forms";
-
 
 // Mixins from other libraries
 @import "ext";

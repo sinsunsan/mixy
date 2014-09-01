@@ -16,39 +16,39 @@ $ipadP: 'm'; // 768 ipad portrait
 $ipadL: 'l'; //1024 ipad landscape
 
 @mixin bs-query($point) {
+
   // Twitter bootstrap 
   // xs / Extra small devices / Phones < 768px
   // sm / Small  / Tablets >= 768px
   // md / Medium  / Desktops >= 992px
   // lg / Large / Desktops >= 1200px
-  @if ($point == xs) {
+  @if ($point == 'xs') {
     @media (max-width: 767px) { @content; }
   }
-  @if ($point == sm) {
+  @if ($point == 'sm') {
     @media (min-width: 768px) { @content; }
   }
-  @if ($point == smm) {
+  @if ($point == 'smm') {
     @media (max-width: 991px) { @content; }
   }
   // Small size max width
-  @if ($point == smo) {
+  @if ($point == 'smo') {
     @media (min-width: 768px) and (max-width: 991px){ @content; }
   }
-  @if ($point == md) {
+  @if ($point == 'md') {
     @media (min-width: 992px) { @content; }
   }
   // Medium size max width
-  @if ($point == mdm) {
+  @if ($point == 'mdm') {
     @media (max-width: 1199px) { @content; }
   }
-  @if ($point == mdo) {
+  @if ($point == 'mdo') {
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
   // We keep ld for legacy but the offical twitter boostrap is lg
-  @if ($point == ld or $point == lg) { 
+  @if ($point == 'ld' or $point == 'lg') { 
     @media (min-width: 1200px) { @content; }
   }
-
   @else {
     @debug "no valid named breakpoint has been found";
   }

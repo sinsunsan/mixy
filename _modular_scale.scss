@@ -1,0 +1,204 @@
+// Modular scale settings
+$ms-ratio: $fourth !default;
+$ms-base: 11px !default;
+
+@if ($mixy-print-css) {
+    @debug ('mixy print css is set to on and css styles will be outputted');
+    /***********************
+     * Font size
+     ************************/
+    .fs-2 {
+        font-size: ms(-2);
+    }
+    .fs-1 {
+        font-size: ms(-1);
+    }
+    .fs0 {
+        font-size: ms(0);
+    }
+    .fs1 {
+        font-size: ms(1);
+    }
+    .fs2 {
+        font-size: ms(2);
+    }
+    .fs3 {
+        font-size: ms(3);
+    }
+    .fs4 {
+        font-size: ms(4);
+    }
+    .fs5 {
+        font-size: ms(5);
+    }
+    .fs6 {
+        font-size: ms(6);
+    }
+    .fs7 {
+        font-size: ms(7);
+    }
+    .fs8 {
+        font-size: ms(8);
+    }
+    .fs9 {
+        font-size: ms(9);
+    }
+
+    /***********************
+     * Margin top
+     ************************/
+    .mt-2 {
+        margin-top: ms(-2);
+    }
+    .mt-1 {
+        margin-top: ms(-1);
+    }
+    .mt1 {
+        margin-top: ms(1);
+    }
+    .mt2 {
+        margin-top: ms(2);
+    }
+    .mt3 {
+        margin-top: ms(3);
+    }
+    .mt4 {
+        margin-top: ms(4);
+    }
+    .mt5 {
+        margin-top: ms(5);
+    }
+    .mt6 {
+        margin-top: ms(6);
+    }
+    .mt7 {
+        margin-top: ms(7);
+    }
+    .mt8 {
+        margin-top: ms(8);
+    }
+
+
+    /***********************
+     * Margin bottom
+     ************************/
+
+    .mb-2 {
+        margin-bottom: ms(-2);
+    }
+    .mb-1 {
+        margin-bottom: ms(-1);
+    }
+    .mb1 {
+        margin-bottom: ms(1);
+    }
+    .mb2 {
+        margin-bottom: ms(2);
+    }
+    .mb3 {
+        margin-bottom: ms(3);
+    }
+    .mb4 {
+        margin-bottom: ms(4);
+    }
+    .mb5 {
+        margin-bottom: ms(5);
+    }
+    .mb6 {
+        margin-bottom: ms(6);
+    }
+    .mb7 {
+        margin-bottom: ms(7);
+    }
+    .mb8 {
+        margin-bottom: ms(8);
+
+    }
+
+    /***********************
+     * Margin left
+     ************************/
+
+    .ml-2 {
+        margin-left: ms(-2);
+    }
+    .ml-1 {
+        margin-left: ms(-1);
+    }
+    .ml1 {
+        margin-left: ms(1);
+    }
+    .ml2 {
+        margin-left: ms(2);
+    }
+    .ml3 {
+        margin-left: ms(3);
+    }
+    .ml4 {
+        margin-left: ms(4);
+    }
+    .ml5 {
+        margin-left: ms(5);
+    }
+    .ml6 {
+        margin-left: ms(6);
+    }
+    .ml7 {
+        margin-left: ms(7);
+    }
+    .ml8 {
+        margin-left: ms(8);
+    }
+
+    /***********************
+     * Margin right
+     ************************/
+
+    .mr-2 {
+        margin-right: ms(-2);
+    }
+    .mr-1 {
+        margin-right: ms(-1);
+    }
+    .mr1 {
+        margin-right: ms(1);
+    }
+    .mr2 {
+        margin-right: ms(2);
+    }
+    .mr3 {
+        margin-right: ms(3);
+    }
+    .mr4 {
+        margin-right: ms(4);
+    }
+    .mr5 {
+        margin-right: ms(5);
+    }
+    .mr6 {
+        margin-right: ms(6);
+    }
+    .mr7 {
+        margin-right: ms(7);
+    }
+    .mr8 {
+        margin-left: ms(8);
+    }
+
+    /***********************
+     * Other styling classes
+     ************************/
+
+    .no-padding {
+        padding: 0;
+    }
+    .no-margin {
+        margin: 0;
+    }
+    .no-background {
+        background: none;
+    }
+    .no-border {
+        border: none;
+    }
+}

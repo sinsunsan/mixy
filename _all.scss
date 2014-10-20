@@ -1,7 +1,10 @@
 // General mixins that comes from https://github.com/sinsunsan/mixy
 
 //$mixy-print-css: false !default;
-$mixy-print-css: false;
+$mixy-print-css: false !default;
+@debug 'mixy lib is loaded';
+
+@import "bower_components/modular-scale/stylesheets//modular-scale";
 
 @import "vars";
 @import "gen";
@@ -14,6 +17,8 @@ $mixy-print-css: false;
 @import "responsive";
 @import "images";
 @import "forms";
+@import "modular_scale";
+
 
 // Mixins from other libraries
 @import "ext";
@@ -21,7 +26,7 @@ $mixy-print-css: false;
 @mixin mixy {
     @include mixy-forms;
 }
-    
+
 .mixy {
     @if ($mixy-print-css) {
         // Include the mixins to be prefixed by mixy class

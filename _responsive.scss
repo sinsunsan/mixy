@@ -2,22 +2,22 @@
 // http://css-tricks.com/media-queries-sass-3-2-and-codekit/
 
 $xl: 1200px;
-$l: 1024px;   
+$l: 1024px;
 $m: 768px;
 $s: 480px;
 $xs: 320px;
 
 $nomob: 'mmin'; // All exept mobile
 $mob: 'mmax';
-$iphone: 's'; // 320 portait 480 landscape 
+$iphone: 's'; // 320 portait 480 landscape
 $iphoneL: 'xs'; // Iphone portrait 320
-$ipadP: 'm'; // 768 ipad portrait 
+$ipadP: 'm'; // 768 ipad portrait
 // exactly 768 could be adresses with min-width: 768 max-width: 1023
 $ipadL: 'l'; //1024 ipad landscape
 
 @mixin bs-query($point) {
 
-  // Twitter bootstrap 
+  // Twitter bootstrap
   // xs / Extra small devices / Phones < 768px
   // sm / Small  / Tablets >= 768px
   // md / Medium  / Desktops >= 992px
@@ -46,19 +46,19 @@ $ipadL: 'l'; //1024 ipad landscape
     @media (min-width: 992px) and (max-width: 1199px){ @content; }
   }
   // We keep ld for legacy but the offical twitter boostrap is lg
-  @if ($point == 'ld' or $point == 'lg') { 
+  @if ($point == 'ld' or $point == 'lg') {
     @media (min-width: 1200px) { @content; }
   }
   @else {
-    @debug "no valid named breakpoint has been found";
+    //@debug "no valid named breakpoint has been found";
   }
 }
 
-// Mixin with custom value  
+// Mixin with custom value
 @mixin bp-min($value) {
    @media (min-width: $value) { @content; }
 }
-// Mixin with custom value  
+// Mixin with custom value
 @mixin bp-max($value) {
    @media (max-width: $value) { @content; }
 }
@@ -70,7 +70,7 @@ $ipadL: 'l'; //1024 ipad landscape
 }
 
 @mixin break($point) {
-  
+
   @if $point == xl {
     // 1025 to 1200
     @media (min-width: $l + 1px) and (max-width: $xl) { @content; }
@@ -83,8 +83,8 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == m {
     @media (min-width: $s + 1px) and (max-width: $m) { @content; }
   }
-  // As we have a mobile first approach. 
-  // This break point should normally not be used. 
+  // As we have a mobile first approach.
+  // This break point should normally not be used.
   // As it's the default
   // It's a special breakpoints as it is the first, so it's similar to smax
   // @todo make the iphone portait xs
@@ -92,7 +92,7 @@ $ipadL: 'l'; //1024 ipad landscape
   @if $point == s {
     @media (max-width: $s) { @content; }
   }
-  
+
   // Smaller than
   @if $point == xlmax {
     @media (max-width: $xl) { @content; }
@@ -101,12 +101,12 @@ $ipadL: 'l'; //1024 ipad landscape
     @media (max-width: $l) { @content; }
   }
   @if $point == mmax {
-    @media (max-width: $m) { @content; }    
+    @media (max-width: $m) { @content; }
   }
   @if $point == smax {
-    @media (max-width: $s) { @content; }    
+    @media (max-width: $s) { @content; }
   }
-  
+
   // Greater than
   @if $point == xlmin {
     @media (min-width: $xl) { @content; }
@@ -119,13 +119,13 @@ $ipadL: 'l'; //1024 ipad landscape
     @media (min-width: $m) { @content; }
   }
   @if $point == smin {
-    @media (min-width: $s) { @content; }    
+    @media (min-width: $s) { @content; }
   }
 }
 
-// Twitter bootstrap has the class img-responsive 
-// that give a max-width: 100% 
-// But this don't allow lower res images to be scaled up 
+// Twitter bootstrap has the class img-responsive
+// that give a max-width: 100%
+// But this don't allow lower res images to be scaled up
 // Even if their resolution is lower
 @if ($mixy-print-css) {
   .img-scale-width {

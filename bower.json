@@ -1,21 +1,19 @@
 {
   "name": "mixy",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "homepage": "https://github.com/sinsunsan/mixy",
   "main": "./_all.scss",
   "authors": [
     "Sébastien Lucas"
-  ], 
+  ],
   "description": "Mixy is a library of sass mixins",
   "keywords": [
     "sass",
-    "mixins" 
-  ], 
-  "licence": "MIT",
-  "ignore": [
+    "mixins"
   ],
+  "licence": "MIT",
+  "ignore": [],
   "dependencies": {
-  },
-  "devDependencies": {
+    "bourbon": "~4.0.2"
   }
 }

@@ -4,7 +4,7 @@
 $mixy-print-css: false !default;
 @debug 'mixy lib is loaded';
 
-@import "bower_components/modular-scale/stylesheets//modular-scale";
+@import "bower_components/modular-scale/modular-scale/stylesheets/modular-scale";
 
 @import "vars";
 @import "gen";

@@ -1,35 +1,3 @@
-// General mixins that comes from https://github.com/sinsunsan/mixy
-
-//$mixy-print-css: false !default;
-$mixy-print-css: false !default;
-@debug 'mixy lib is loaded';
-
-@import "bower_components/modular-scale/modular-scale/stylesheets/modular-scale";
-
-@import "vars";
-@import "gen";
-@import "styles";
-@import "colorbox";
-@import "shapes";
-@import "icons";
-@import "center";
-@import "videos";
-@import "responsive";
-@import "images";
-@import "forms";
-@import "modular_scale";
-
-
-// Mixins from other libraries
-@import "ext";
-
-@mixin mixy {
-    @include mixy-forms;
-}
-
-.mixy {
-    @if ($mixy-print-css) {
-        // Include the mixins to be prefixed by mixy class
-        //@include ;
-    }
-}
+// Kept for compatibility
+// but _mixy.scss is a better name for library starter
+@import "mixy";

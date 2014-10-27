@@ -52,4 +52,16 @@ $ms-base: 11px !default;
     .no-border {
         border: none;
     }
+
+    // New clearfix hack (allow the container of float element to size to them)
+    // http://davidwalsh.name/css-clear-fix
+    .clear:before,
+    .clear:after {
+        content: " ";
+        display: table;
+    }
+
+    .clear:after {
+        clear: both;
+    }
 }

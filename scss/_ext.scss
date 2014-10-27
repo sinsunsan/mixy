@@ -22,10 +22,10 @@ $em-base: 16px !default;
 @function rem($pxval) {
     $em: em($pxval);
     $em : strip-units($em);
-    @return $em + rem; 
+    @return $em + rem;
 }
 
-// http://bourbon.io/docs/#calc 
+// http://bourbon.io/docs/#calc
 // http://jonkemp.com/css/cross-browser-css-calc.html
 // Bourbon version is lacking some vendor prefix
 @mixin calc($property, $value) {
@@ -35,7 +35,7 @@ $em-base: 16px !default;
 }
 
 // A specialized mixin to use calc only for it's main purpose
-// removing fixed height, to a percentage div 
+// removing fixed height, to a percentage div
 @mixin calc-perc-fixed($property, $percentage, $fixed) {
   #{$property}: -moz-calc(#{$percentage} - #{$fixed}) ;
   #{$property}: -webkit-calc(#{$percentage} - #{$fixed});

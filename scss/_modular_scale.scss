@@ -3,9 +3,9 @@ $ms-ratio: $fourth !default;
 $ms-base: 11px !default;
 
 @if ($mixy-print-css) {
-    @debug ('mixy print css is set to on and css styles will be outputted');
+    //@debug ('mixy print css is set to on and css styles will be outputted');
 
-    $ms-list: -2 -1 0 1 2 3 4 5 6 7 8 9;
+    $ms-list: -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20;
     @each $size in $ms-list {
         .fs#{$size} {
             font-size: ms($size);
@@ -21,6 +21,18 @@ $ms-base: 11px !default;
         }
         .mr#{$size} {
             margin-right: ms($size);
+        }
+        .padding#{$size} {
+            padding: ms($size);
+        }
+        .margin#{$size} {
+            padding: ms($size);
+        }
+        .height#{$size} {
+            height: ms($size);
+        }
+        .width#{$size} {
+            width: ms($size);
         }
         .pr#{$size} {
             padding-right: ms($size);

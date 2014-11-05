@@ -2,8 +2,6 @@
 
 //$mixy-print-css: false !default;
 $mixy-print-css: false !default;
-@debug 'mixy lib is loaded';
-
 @import "../modular-scale/stylesheets/modular-scale";
 
 @import "scss/vars";

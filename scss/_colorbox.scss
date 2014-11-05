@@ -1,7 +1,7 @@
-// A mixin to style colorbox popin 
+// A mixin to style colorbox popin
 // http://www.jacklmoore.com/colorbox
 
-// To be applied on a the body element 
+// To be applied on a the body element
 // Some div of colorbox are not in the #colorbox container
 @mixin colorbox(
   $background : white,  // Background color
@@ -12,9 +12,9 @@
   $button-close-align: 'center', // Inner, outer or center / Need the size of the button to be set
   $button-close-size: 25px, // Size of the button icon
   $boder-radius: 10px, //  Size the main div border radius
-  $position: absolute // Fixed / absolute 
+  $position: absolute // Fixed / absolute
 ) {
-  
+
   /*
       Colorbox Core Style:
       The following CSS is consistent between example themes and should not be altered.
@@ -30,7 +30,7 @@
   .cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
   .cboxIframe{width:100%; height:100%; display:block; border:0;}
   #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
-  
+
   #colorbox {
     @if ($position == 'fixed') {
        #cboxOverlay { position: fixed;}

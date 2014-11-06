@@ -22,16 +22,16 @@ $ms-base: 11px !default;
         .mr#{$size} {
             margin-right: ms($size);
         }
-        .padding#{$size} {
+        .ms-padding#{$size} {
             padding: ms($size);
         }
-        .margin#{$size} {
+        .ms-margin#{$size} {
             padding: ms($size);
         }
-        .height#{$size} {
+        .ms-height#{$size} {
             height: ms($size);
         }
-        .width#{$size} {
+        .ms-width#{$size} {
             width: ms($size);
         }
         .pr#{$size} {

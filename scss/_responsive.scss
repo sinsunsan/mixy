@@ -10,6 +10,14 @@ $xs: 320px;
 $nomob: 'mmin'; // All exept mobile
 $mob: 'mmax';
 $iphone: 's'; // 320 portait 480 landscape
+// iphone 4 320px x 480px
+// iphone 5 320px x 568px
+// iphone 6 375 x 667 px
+// samsun galaxy s3 360 x 640
+// samsung galaxy S4 360px x 640px
+// So with 360px we have nearly alls
+// 480px is the next mobile resolution
+
 $iphoneL: 'xs'; // Iphone portrait 320
 $ipadP: 'm'; // 768 ipad portrait
 // exactly 768 could be adresses with min-width: 768 max-width: 1023
@@ -17,6 +25,10 @@ $ipadL: 'l'; //1024 ipad landscape
 
 @mixin bs-query($point) {
 
+  // This point is not twbs but it lack often it correspond to mobile portrait
+  @if ($point == 'xxs') {
+     @media (max-width: 481px) { @content; }
+  }
   // Twitter bootstrap
   // xs / Extra small devices / Phones < 768px
   // sm / Small  / Tablets >= 768px

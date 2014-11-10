@@ -143,6 +143,11 @@ $ipadL: 'l'; //1024 ipad landscape
   .img-scale-width {
     width: 100%;
   }
+  .hidden-xxs {
+    @include bs-query('xxs') {
+      display: hidden;
+    }
+  }
 }
 @mixin responsive-image {
   width: 100%;

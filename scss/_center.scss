@@ -2,7 +2,7 @@
 //http://blog.themeforest.net/tutorials/vertical-centering-with-css/
 
 // Vertical Align
-// $height : hieght of the div to be vertical centered
+// $height : height of the div to be vertical centered
 @mixin vertical-center($height, $op: 'absolute') {
   height: $height;
   position: $op;
@@ -14,7 +14,7 @@
 @mixin horizontal-center($width, $op: 'absolute') {
   left: 50%;
   position: $op;
-  
+
   margin-left: - ($width / 2);
   width: $width;
   @include set-position($op);
@@ -47,7 +47,7 @@
     height: 100%;
     vertical-align: middle;
   }
-  .centered-content, 
+  .centered-content,
   .centered {
     vertical-align: middle;
     @include inline-block;
@@ -55,13 +55,13 @@
 }
 
 // http://cdpn.io/BDkdJ
-// To be applied to centering container 
+// To be applied to centering container
 // need to have a .centered div inside
 // IE8 + compatible
 @mixin centered-table {
   display:table;
   .centered {
-    display:table-cell; 
+    display:table-cell;
     vertical-align:middle;
     text-align: center;
   }
@@ -76,7 +76,14 @@
   }
 }
 
-// Size the height of a div 
+//http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align-translateY {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Size the height of a div
 // relative to a width in %
 // Technics in http://stackoverflow.com/questions/10062811/height-div-based-on-percentage-based-width
 @mixin ratio($width, $height2width:1) {

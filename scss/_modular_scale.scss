@@ -3,7 +3,9 @@ $ms-ratio: $fourth !default;
 $ms-base: 11px !default;
 
 @if ($mixy-print-css) {
-    //@debug ('mixy print css is set to on and css styles will be outputted');
+    @debug ('modular scale');
+    @debug($ms-ratio);
+    @debug($ms-base);
 
     $ms-list: -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20;
     @each $size in $ms-list {
@@ -38,7 +40,7 @@ $ms-base: 11px !default;
             padding-right: ms($size);
         }
         .pl#{$size} {
-            padding-laft: ms($size);
+            padding-left: ms($size);
         }
         .pt#{$size} {
             padding-top: ms($size);

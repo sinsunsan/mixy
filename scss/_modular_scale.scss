@@ -12,6 +12,9 @@ $ms-base: 11px !default;
         .fs#{$size} {
             font-size: ms($size);
         }
+        .m#{$size} {
+            margin: ms($size);
+        }
         .mt#{$size} {
             margin-top: ms($size);
         }
@@ -35,6 +38,9 @@ $ms-base: 11px !default;
         }
         .ms-width#{$size} {
             width: ms($size);
+        }
+        .p#{$size} {
+            padding: ms($size);
         }
         .pr#{$size} {
             padding-right: ms($size);

@@ -93,3 +93,23 @@
     // http://compass-style.org/examples/compass/css3/box_sizing/
     @include box-sizing(border-box);
 }
+
+//http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering
+// Flexbox centering
+// <div class="flex-center-wrapper">
+//    <div class="flex-centered-item">
+.flex-center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-centered-item {
+  max-width: 50%;
+}
+.flex-top-item {
+  align-self: flex-start;
+}
+.flex-bottom-item {
+  align-self: flex-end;
+}
+

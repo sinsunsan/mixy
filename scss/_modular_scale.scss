@@ -54,6 +54,12 @@ $ms-base: 11px !default;
         .pb#{$size} {
             padding-bottom: ms($size);
         }
+        .w#{$size} {
+            width: ms($size);
+        }
+        .h#{$size} {
+            height: ms($size);
+        }
     }
 
     /***********************

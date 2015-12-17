@@ -2,7 +2,11 @@
 //  http://www.css3shapes.com/
 
 // Need a wrapper
-// $ratio height / width factor
+// $type: direction of the triangle (top, bottom...)
+// $size: size of the triangle
+// $color: color of the triangle
+// $ratio height/width factor
+
 @mixin triangle($type, $size: 100px, $color: gray, $ratio: 1) {
   width: 0;
 	height: 0;
@@ -32,6 +36,16 @@
   	border-right: ($size / 2) solid transparent;
   	border-top: ($size * $ratio) solid $color;
   }
+  @else if ($type == 'right') {
+    border-top: ($size / 2) solid transparent;
+    border-bottom: ($size / 2) solid transparent;
+    border-left: ($size * $ratio) solid $color;
+  }
+  @else if ($type == 'left') {
+    border-top: ($size / 2) solid transparent;
+    border-bottom: ($size / 2) solid transparent;
+    border-right: ($size * $ratio) solid $color;
+  }
 }
 
 @mixin triangle-up {
@@ -42,7 +56,7 @@
 	border-bottom: 100px solid red;
 }
 
-// Need a wrapper 
+// Need a wrapper
 // div.button
 // div.inner
 // button {@include button-chamfered();}
@@ -52,12 +66,12 @@
 ) {
   background: $background;
   position: relative;
-  
+
   .top-right, .top-left, .bottom-right, .bottom-left {
     background: $background;
     content: '';
     position: absolute;
-   
+
   }
   // The wrapper
   .top-right {

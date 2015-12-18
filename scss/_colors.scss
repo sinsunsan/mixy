@@ -1,0 +1,14 @@
+// print standard color classes
+// to set text colors or background colors
+// $color-map is a map of color name
+// http://www.sitepoint.com/sass-maps-vs-nested-lists/
+@mixin set-color-classes($color-list) {
+  @each $color-name, $color in $color-list {
+    .col-tx-#{$color-name} {
+      color: $color
+    }
+    .col-bk-#{$color-name} {
+      background-color: $color;
+    }
+  }
+}

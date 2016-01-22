@@ -1,0 +1,32 @@
+@import "scss/vars";
+@import "scss/gen";
+@import "scss/styles";
+
+@import "scss/shapes";
+@import "scss/icons";
+@import "scss/center";
+@import "scss/videos";
+@import "scss/responsive";
+@import "scss/images";
+@import "scss/forms";
+
+@import "scss/modular_scale";
+@import "scss/spacing";
+
+@import "scss/typo";
+
+
+// Mixins copied for convenience
+// from other libraries
+@import "scss/ext";
+
+@mixin mixy {
+    @include mixy-forms;
+}
+
+.mixy {
+    @if ($mixy-print-css) {
+        // Include the mixins to be prefixed by mixy class
+        //@include ;
+    }
+}

@@ -1,0 +1,35 @@
+
+
+//- http://www.sitepoint.com/using-sass-maps/
+$sizesTypes: (
+ xs: $xs,
+ sm: $sm,
+ md: $md,
+ lg: $lg
+);
+
+$sidesTypes:  (
+  top: 't',
+  bottom: 'b',
+  left: 'l',
+  right: 'r'
+);
+
+@each $sizeName, $sizeValue in $sizesTypes {
+  @each $sideName, $sideValue in $sidesTypes {
+    //- Margin
+    .m-#{$sideValue}-#{$sizeName} {
+      margin-#{$sideName}: $sizeValue;
+    }
+    .m-#{$sizeName} {
+      margin: $sizeValue;
+    }
+    //- Padding
+    .p-#{$sideValue}-#{$sizeName} {
+      padding-#{$sideName}: $sizeValue;
+    }
+    .p-#{$sizeName} {
+      padding: $sizeValue;
+    }
+  }
+}

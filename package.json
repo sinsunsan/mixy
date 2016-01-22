@@ -1,0 +1,19 @@
+{
+  "name": "Mixy",
+  "version": "1.0.0",
+  "description": "Collection of sass utilies",
+  "scripts": {
+    "make": "bower install && gulp build",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sinsunsan/mixy"
+  },
+  "author": "Sbastien Lucas",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
+}

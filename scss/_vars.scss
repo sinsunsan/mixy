@@ -5,7 +5,7 @@ $one-half: 50%;
 $two-third: 66.666666666666666666666666666%;
 
 // Uses to make standard spacing
-$xs: 10px;
-$sm: 15px;
-$md: 20px;
-$lg: 30px;
+$dim-xs: 10px!default;
+$dim-sm: 15px!default;
+$dim-md: 20px!default;
+$dim-lg: 30px!default;

@@ -2,12 +2,12 @@
 
 //- http://www.sitepoint.com/using-sass-maps/
 $sizesTypes: (
- xs: $xs,
- sm: $sm,
- md: $md,
- lg: $lg
+ xs: $dim-xs,
+ sm: $dim-sm,
+ md: $dim-md,
+ lg: $dim-lg
 );
-
+@debug $sizesTypes;
 $sidesTypes:  (
   top: 't',
   bottom: 'b',

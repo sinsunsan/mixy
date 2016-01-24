@@ -1,20 +1,17 @@
 @import "scss/vars";
 @import "scss/gen";
 @import "scss/styles";
-
+@import "scss/colors";
 @import "scss/shapes";
 @import "scss/icons";
 @import "scss/center";
 @import "scss/videos";
-@import "scss/responsive";
-@import "scss/images";
+@import "scss/responsive"; // responsive mixins
+@import "scss/images"; // Utilies for images
 @import "scss/forms";
-
-@import "scss/modular_scale";
+@import "scss/modular_scale"; // Modular scale classes
 @import "scss/spacing";
-
 @import "scss/typo";
-
 
 // Mixins copied for convenience
 // from other libraries

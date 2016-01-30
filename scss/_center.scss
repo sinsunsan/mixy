@@ -50,7 +50,7 @@
   .centered-content,
   .centered {
     vertical-align: middle;
-    @include inline-block;
+    display: inline-block;
   }
 }
 

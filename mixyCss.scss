@@ -1,4 +1,4 @@
 //- This file generate the css output
 $mixy-print-css: true;
-@import "./bower_components/modular-scale/stylesheets/modular-scale";
+@import "../modular-scale/stylesheets/modular-scale";
 @import "_import.scss";
